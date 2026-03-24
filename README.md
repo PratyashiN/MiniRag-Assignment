@@ -124,8 +124,38 @@ If not, open this in your browser:
 
 http://localhost:8501
 
-##  Conclusion
+##  Quality Analysis
 
-This project demonstrates how Retrieval-Augmented Generation (RAG) can be used to build reliable and context-aware AI systems. By combining semantic search with a language model, the chatbot is able to generate answers that are grounded in actual documents rather than relying on general knowledge.
-Through this implementation, we can see how techniques like document chunking, vector similarity search using FAISS, and prompt design play a crucial role in improving answer accuracy and reducing hallucination.
-Overall, this project highlights the practical application of RAG systems in real-world scenarios where trustworthy and explainable responses are important.
+To evaluate the performance of the RAG system, a set of test questions was created based on the provided documents. These questions were designed to cover different aspects such as delay management, payments, transparency, and project tracking.
+---
+### Test Questions
+The following questions were used for evaluation:
+1. What factors affect construction project delays?  
+2. How can construction delays be reduced?  
+3. What is the role of an integrated project management system?  
+4. How are contractor payments handled?  
+5. What ensures accountability in construction projects?  
+6. What is the purpose of escrow-based payments?  
+7. How is transparency maintained in the construction process?  
+8. How is project progress tracked?  
+9. What is stage-based contractor payment?  
+10. What are the key features of delay management and accountability?  
+---
+###  Evaluation Criteria
+The system was evaluated based on the following criteria:
+- **Relevance of retrieved chunks:** Whether the retrieved context matches the user query  
+- **Groundedness:** Whether the generated answers are based only on retrieved context  
+- **Hallucination:** Whether the model introduces unsupported or external information  
+- **Clarity:** Whether the answers are clear, concise, and well-structured  
+---
+###  Observations
+- The retrieved chunks were generally relevant to the user queries, indicating that the embedding model and FAISS based retrieval are effective.  
+- The generated answers were mostly grounded in the retrieved context, with minimal use of external or unsupported information.  
+- The system showed low hallucination, as it either stayed within the provided context or gave cautious responses when information was not explicitly available.  
+- The answers were concise and structured, often presented in bullet points, making them easy to understand.  
+- The system performed well for both direct questions (e.g., solutions to delays) and slightly inferential questions (e.g., factors affecting delays).  
+---
+
+###  Conclusion
+
+Overall, the system demonstrates strong performance in retrieving relevant information and generating accurate, context-based answers. The prompt design ensures that responses remain grounded, while still allowing simple and reasonable inference when required. This results in a reliable and effective document-based question-answering system.
