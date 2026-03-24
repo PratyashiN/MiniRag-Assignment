@@ -124,7 +124,7 @@ If not, open this in your browser:
 
 http://localhost:8501
 
-## 🏁 Conclusion
+##  Conclusion
 
 This project demonstrates how Retrieval-Augmented Generation (RAG) can be used to build reliable and context-aware AI systems. By combining semantic search with a language model, the chatbot is able to generate answers that are grounded in actual documents rather than relying on general knowledge.
 Through this implementation, we can see how techniques like document chunking, vector similarity search using FAISS, and prompt design play a crucial role in improving answer accuracy and reducing hallucination.
