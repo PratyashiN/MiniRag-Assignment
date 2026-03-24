@@ -98,26 +98,34 @@ This transparency helps users understand **why a particular answer was generated
 ```bash
 git clone <your-repo-link>
 cd rag-chatbot
-2. Install dependencies
+```
+
+### 2. Install dependencies
+```bash
 pip install -r requirements.txt
-3. Set your API key
+```
+### 3. Set your API key
 Windows:
+```bash
 set OPENROUTER_API_KEY=your_api_key
+```
 Mac/Linux:
+```bash
 export OPENROUTER_API_KEY=your_api_key
-4. Run the app
+```
+### 4. Run the app
+```bash
 streamlit run app.py
- Project Structure
-rag-chatbot/
-│
-├── app.py
-├── requirements.txt
-├── notebook.ipynb
-└── data/
+ ```
+5. Open in Browser
 
-Reduced hallucination
-Fast similarity search using FAISS
-Interactive chatbot interface
-🏁 Conclusion
+After running the command, the app will open automatically.
+If not, open this in your browser:
 
-This project demonstrates how combining retrieval with generation can significantly improve the reliability of AI systems. By grounding responses in actual documents, the chatbot produces answers that are both accurate and explainable.
+http://localhost:8501
+
+## 🏁 Conclusion
+
+This project demonstrates how Retrieval-Augmented Generation (RAG) can be used to build reliable and context-aware AI systems. By combining semantic search with a language model, the chatbot is able to generate answers that are grounded in actual documents rather than relying on general knowledge.
+Through this implementation, we can see how techniques like document chunking, vector similarity search using FAISS, and prompt design play a crucial role in improving answer accuracy and reducing hallucination.
+Overall, this project highlights the practical application of RAG systems in real-world scenarios where trustworthy and explainable responses are important.
