@@ -65,9 +65,9 @@ def retrieve(q, k=5):
 # -------------------------------
 # LLM
 # -------------------------------
-client = OpenAI(
+client =  OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key=("OPENROUTER_API_KEY")  
+    api_key=os.environ.get("OPENROUTER_API_KEY") 
 )
 
 def generate(context, question):
