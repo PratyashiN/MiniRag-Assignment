@@ -156,6 +156,49 @@ The system was evaluated based on the following criteria:
 - The system performed well for both direct questions (e.g., solutions to delays) and slightly inferential questions (e.g., factors affecting delays).  
 ---
 
-###  Conclusion
+##  Local LLM Comparison
 
-Overall, the system demonstrates strong performance in retrieving relevant information and generating accurate, context-based answers. The prompt design ensures that responses remain grounded, while still allowing simple and reasonable inference when required. This results in a reliable and effective document-based question-answering system.
+As an additional exploration, a comparison was made between an API based LLM (LLaMA 3 via OpenRouter) and a local open source LLM.
+
+---
+
+###  Models Used
+
+- **API-based Model:** LLaMA 3 (8B Instruct via OpenRouter)  
+- **Local Model:** Phi-3 Mini (3.8B) 
+
+---
+
+###  Comparison
+
+#### 1. Answer Quality  
+The OpenRouter based LLaMA 3 model produced more accurate, detailed, and well structured responses. It followed instructions more effectively and generated clearer answers.  
+In comparison, the local Phi-3 Mini model, due to its smaller size, may produce simpler responses and sometimes lacks depth in reasoning.
+
+---
+
+#### 2. Latency  
+Local models can offer faster response times after initial setup since they run directly on the machine without requiring API calls.  
+However, API-based models introduce slight latency due to network communication, although this was not significant for this project.
+
+---
+
+#### 3. Groundedness to Retrieved Context  
+Both models rely on retrieved context for answering queries.  
+However, LLaMA 3 demonstrated better adherence to prompt instructions, resulting in more consistent grounding and fewer chances of hallucination.  
+Smaller local models may occasionally deviate slightly from the provided context.
+
+---
+
+#### 4. Ease of Setup and Use  
+Using LLaMA 3 via OpenRouter was straightforward, requiring only an API key and minimal configuration.  
+On the other hand, running a local model like Phi-3 Mini requires additional setup, including installing dependencies and ensuring sufficient system resources.
+
+---
+
+##  Conclusion
+
+This project demonstrates the practical implementation of a Retrieval-Augmented Generation (RAG) system for building reliable and context-aware AI applications. By combining semantic search with a language model, the chatbot is able to generate responses that are grounded in actual documents rather than relying on general knowledge.
+The use of document chunking, vector embeddings, and FAISS-based retrieval ensures that only relevant information is passed to the model, improving both accuracy and efficiency. Additionally, careful prompt design helps reduce hallucination and ensures that responses remain aligned with the provided context.
+Through evaluation and testing, the system showed strong performance in retrieving relevant information and generating clear, structured answers. The deployment using Streamlit further demonstrates how such systems can be made accessible through simple and interactive interfaces.
+Overall, this project highlights the effectiveness of RAG systems in real-world scenarios where accuracy, transparency, and reliability are important. It also provides a solid foundation for further improvements, such as enhancing retrieval strategies, integrating larger datasets, or experimenting with different language models.
